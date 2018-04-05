@@ -177,7 +177,7 @@ def delete(lst):
         l = TodoList.query.filter_by(id = lst).first()
         db.session.delete(l)
         db.session.commit()
-        flash("Deleted list " + l.title)
+        flash("Deleted list " + l.title + ':(')
         return redirect(url_for('all_lists'))
     return render_template('all_lists.html', form = form)
 if __name__ == "__main__":
